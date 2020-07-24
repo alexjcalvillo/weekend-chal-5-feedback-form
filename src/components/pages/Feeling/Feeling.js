@@ -23,6 +23,7 @@ class Feeling extends Component {
     return (
       <div className="App">
         <h1>Feeling Page</h1>
+        <h2>How are you feeling today?</h2>
         <label htmlFor="feeling" />
         <input
           onChange={this.handleChange}

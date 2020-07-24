@@ -27,6 +27,7 @@ class Understanding extends Component {
     return (
       <div className="App">
         <h1>Understanding Page</h1>
+        <h2>How well are you understanding today's content?</h2>
         <label htmlFor="understanding" />
         <input
           onChange={this.handleChange}

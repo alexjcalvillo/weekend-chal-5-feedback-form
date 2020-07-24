@@ -26,6 +26,7 @@ class Support extends Component {
     return (
       <div className="App">
         <h1>Support Page</h1>
+        <h2>How well are you being supported?</h2>
         <label htmlFor="support" />
         <input
           onChange={this.handleChange}

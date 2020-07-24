@@ -17,13 +17,14 @@ class Comments extends Component {
       type: 'SET_COMMENTS',
       payload: this.state.comments,
     });
-    // this.props.history.push('/review');
+    this.props.history.push('/review');
   };
 
   render() {
     return (
       <div className="App">
         <h1>Comments Page</h1>
+        <h2>Any other comments or concerns you'd like us to know about?</h2>
         <label htmlFor="comments">Comments</label>
         <input
           onChange={this.handleChange}
