@@ -1,8 +1,27 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import './Header.css';
 
 class Header extends Component {
+  state = {
+    onPage: this.props.store.pageReducer,
+  };
+  handleClick = (page) => (event) => {
+    this.setState({
+      onPage: page,
+    });
+    this.props.dispatch({
+      type: page,
+    });
+  };
   render() {
+    const { onPage } = this.state;
+    let active = '';
+    if (onPage === 'feeling') {
+      active = 'active';
+    }
     return (
       <div>
         <header className="App-header">
@@ -14,14 +33,15 @@ class Header extends Component {
 
         <nav className="nav">
           <ul className="nav-links">
-            <li>
-              <Link to="/feeling">Feeling</Link>
+            <li>{this.state.onPage}</li>
+            <li onClick={this.handleClick('feeling')}>
+              <Link className={active} to="/feeling">
+                Feeling
+              </Link>
             </li>
 
             <li>
-              <Link className="links" to="/understanding">
-                Understanding
-              </Link>
+              <Link to="/understanding">Understanding</Link>
             </li>
             <li>
               <Link to="/support">Support</Link>
@@ -36,4 +56,9 @@ class Header extends Component {
   }
 }
 
-export default Header;
+const mapStoreToProps = (store) => {
+  return {
+    store,
+  };
+};
+export default connect(mapStoreToProps)(Header);

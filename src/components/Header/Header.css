@@ -1,26 +1,31 @@
 .nav {
   display: inline-block;
-  margin-left: 200px;
 }
 
 .nav-links {
   margin: 0;
   padding: 0;
+  list-style-type: none;
 }
 
 .nav-links > * {
-  margin: 0 0 0 10px;
+  margin: 0 0 0 20px;
   font-size: 2rem;
   display: inline-block;
   vertical-align: middle;
 }
 
-.links a {
+.nav-links a {
   color: #fefefe;
   text-decoration: none;
 }
 
-.links a:hover {
+.nav-links a:hover {
+  color: #3349ed;
+  text-decoration: none;
+}
+
+.active {
   color: #3349ed;
   text-decoration: none;
 }

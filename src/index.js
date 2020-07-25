@@ -44,12 +44,20 @@ const commentsReducer = (state = '', action) => {
   return state;
 };
 
+const pageReducer = (state = 'home', action) => {
+  if (action.type === 'feeling') {
+    return 'feeling';
+  }
+  return state;
+};
+
 const storeInstance = createStore(
   combineReducers({
     feelingReducer,
     understandingReducer,
     supportReducer,
     commentsReducer,
+    pageReducer,
   }),
   applyMiddleware(logger)
 );
