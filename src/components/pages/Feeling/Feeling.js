@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-//MATERIAL UI COMPONENTS
-import { Button, Input } from '@material-ui/core';
+import './Feeling.css';
 
 class Feeling extends Component {
   state = {
@@ -28,20 +27,31 @@ class Feeling extends Component {
 
   render() {
     return (
-      <div className="App">
-        <h1>Feeling Page</h1>
+      <div className="container">
         <h2>How are you feeling today?</h2>
-        <label htmlFor="feeling" />
+        {/* <label htmlFor="feeling" />
         <Input
           onChange={this.handleChange}
           type="number"
           placeholder="how are you feeling"
           id="feeling"
           value={this.state.feeling}
-        />
-        <Button variant="contained" color="primary" onClick={this.handleNext}>
-          Next
-        </Button>
+        /> */}
+        <div>
+          <select value={this.state.feeling} onChange={this.handleChange}>
+            <option value={0}>0 - I have no feeling</option>
+            <option value={1}>1</option>
+            <option value={2}>2</option>
+            <option value={3}>3</option>
+            <option value={4}>4</option>
+            <option value={5}>5 - I feel everything!</option>
+          </select>
+        </div>
+        <div>
+          <button className="btn" onClick={this.handleNext}>
+            Next
+          </button>
+        </div>
       </div>
     );
   }

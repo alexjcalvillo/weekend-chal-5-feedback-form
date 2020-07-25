@@ -1,0 +1,26 @@
+.nav {
+  display: inline-block;
+  margin-left: 200px;
+}
+
+.nav-links {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links > * {
+  margin: 0 0 0 10px;
+  font-size: 2rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.links a {
+  color: #fefefe;
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: #3349ed;
+  text-decoration: none;
+}
