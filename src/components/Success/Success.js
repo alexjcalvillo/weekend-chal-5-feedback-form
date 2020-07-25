@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+//MATERIAL-UI COMPONENTS
+import { Button } from '@material-ui/core';
+
 class Success extends Component {
   leaveFeedback = () => {
     this.props.history.push('/');
@@ -7,9 +10,19 @@ class Success extends Component {
   render() {
     return (
       <div>
-        <h1>Feedback Submitted!</h1>
-        <h3>Thank you for taking the time to submit feedback!</h3>
-        <button onClick={this.leaveFeedback}>Leave New Feedback</button>
+        <div>
+          <h1>Feedback Submitted!</h1>
+        </div>
+        <div>
+          <h3>Thank you for taking the time to submit feedback!</h3>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={this.leaveFeedback}
+          >
+            Leave New Feedback
+          </Button>
+        </div>
       </div>
     );
   }
