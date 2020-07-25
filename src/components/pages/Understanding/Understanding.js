@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+//MATERIAL COMPONENTS
+import { Button, Input } from '@material-ui/core';
+
+//CUSTOM STYLES
+import '../Understanding/Understanding.css';
+
 class Understanding extends Component {
   state = {
-    understanding: '',
+    understanding: this.props.understanding,
   };
 
   handleChange = (event) => {
@@ -14,8 +20,12 @@ class Understanding extends Component {
 
   handleNext = (way) => (event) => {
     if (way === 'back') {
-      this.props.history.push('/');
+      this.props.history.push('/feeling');
     } else if (way === 'next') {
+      if (this.state.understanding === '') {
+        alert('Please enter a value.');
+        return;
+      }
       this.props.dispatch({
         type: 'SET_UNDERSTANDING',
         payload: this.state.understanding,
@@ -28,18 +38,37 @@ class Understanding extends Component {
       <div className="App">
         <h1>Understanding Page</h1>
         <h2>How well are you understanding today's content?</h2>
-        <label htmlFor="understanding" />
-        <input
+        <Input
           onChange={this.handleChange}
           type="number"
           placeholder="how's your understanding?"
           id="understanding"
+          value={this.state.understanding}
         />
-        <button onClick={this.handleNext('back')}>Back</button>
-        <button onClick={this.handleNext('next')}>Next</button>
+        <div className="btn">
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={this.handleNext('back')}
+          >
+            Back
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={this.handleNext('next')}
+          >
+            Next
+          </Button>
+        </div>
       </div>
     );
   }
 }
 
-export default connect()(Understanding);
+const mapStoreToProps = (store) => {
+  return {
+    understanding: store.understandingReducer,
+  };
+};
+export default connect(mapStoreToProps)(Understanding);

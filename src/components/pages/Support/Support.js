@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+//MATERIAL UI COMPONENTS
+import { Button, Input } from '@material-ui/core';
+
 class Support extends Component {
   state = {
-    support: '',
+    support: this.props.support,
   };
 
   handleChange = (event) => {
@@ -15,6 +18,10 @@ class Support extends Component {
     if (way === 'back') {
       this.props.history.push('/understanding');
     } else if (way === 'next') {
+      if (this.state.support === '') {
+        alert('Please enter a value.');
+        return;
+      }
       this.props.dispatch({
         type: 'SET_SUPPORT',
         payload: this.state.support,
@@ -28,17 +35,37 @@ class Support extends Component {
         <h1>Support Page</h1>
         <h2>How well are you being supported?</h2>
         <label htmlFor="support" />
-        <input
+        <Input
           onChange={this.handleChange}
           type="number"
           placeholder="do you feel supported?"
           id="support"
+          value={this.state.support}
         />
-        <button onClick={this.handleNext('back')}>Back</button>
-        <button onClick={this.handleNext('next')}>Next</button>
+        <div>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={this.handleNext('back')}
+          >
+            Back
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={this.handleNext('next')}
+          >
+            Next
+          </Button>
+        </div>
       </div>
     );
   }
 }
 
-export default connect()(Support);
+const mapStoreToProps = (store) => {
+  return {
+    support: store.supportReducer,
+  };
+};
+export default connect(mapStoreToProps)(Support);
