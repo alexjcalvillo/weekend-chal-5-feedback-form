@@ -7,7 +7,7 @@ const pool = require('../modules/pool');
 
 // Get all db and send to client
 router.get('/', (req, res) => {
-  const query = `SELECT * FROM "feedback" ORDER BY "id" ASC;`;
+  const query = `SELECT * FROM "feedback" ORDER BY "id" DESC;`;
 
   pool
     .query(query)
@@ -40,6 +40,21 @@ router.post('/', (req, res) => {
     })
     .catch((err) => {
       console.log(`Hmmm, that's not going to work. ${err}`);
+      res.sendStatus(500);
+    });
+});
+
+// DELETE received item by id
+router.delete('/:id', (req, res) => {
+  const id = req.params.id;
+  const query = `DELETE FROM "feedback" WHERE "id" = $1;`;
+
+  pool
+    .query(query, [id])
+    .then((dbResponse) => {
+      res.sendStatus(200);
+    })
+    .catch((err) => {
       res.sendStatus(500);
     });
 });

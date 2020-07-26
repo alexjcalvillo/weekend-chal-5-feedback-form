@@ -3,6 +3,9 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import './Admin.modules.css';
 
+// IMPORT COMPONENT TO USE
+import swal from '@sweetalert/with-react';
+
 class Admin extends Component {
   //GET call - to retrieve DB stored information
   componentDidMount() {
@@ -22,6 +25,24 @@ class Admin extends Component {
       .catch((err) => {
         console.log(`Something didn't work. ${err}`);
       });
+  };
+
+  // send axios DELETE call
+  deleteFeedback(id) {
+    axios
+      .delete(`/feedback/${id}`)
+      .then((response) => {
+        this.getFeedback();
+      })
+      .catch((err) => {
+        console.log(`Yikes! It broke! ${err}`);
+      });
+  }
+
+  handleClickDelete = (id) => (event) => {
+    console.log('delete button pressed', id);
+    const itemToDelete = id;
+    this.deleteFeedback(itemToDelete);
   };
 
   render() {
@@ -54,7 +75,12 @@ class Admin extends Component {
                     <td>{item.support}</td>
                     <td>{item.comments}</td>
                     <td>
-                      <button className="btn">Delete</button>
+                      <button
+                        className="btn"
+                        onClick={this.handleClickDelete(item.id)}
+                      >
+                        Delete
+                      </button>
                     </td>
                   </tr>
                 );
