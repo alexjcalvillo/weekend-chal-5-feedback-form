@@ -23,7 +23,7 @@ class Header extends Component {
           </h4>
         </header>
 
-        <nav className="nav">
+        {/* <nav className="nav">
           <ul className="nav-links">
             <li onClick={this.handleClick('feeling')}>
               <Link to="/feeling">Feeling</Link>
@@ -39,7 +39,7 @@ class Header extends Component {
               <Link to="/comments">Comments</Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
       </div>
     );
   }
