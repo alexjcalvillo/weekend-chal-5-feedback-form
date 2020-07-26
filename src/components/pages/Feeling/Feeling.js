@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-// import './Feeling.css';
-
+import Restart from '../../Restart/Restart';
 class Feeling extends Component {
   state = {
     feeling: this.props.feeling,
@@ -49,6 +47,7 @@ class Feeling extends Component {
           <button className="btn" onClick={this.handleNext}>
             Next
           </button>
+          <Restart />
         </div>
       </div>
     );

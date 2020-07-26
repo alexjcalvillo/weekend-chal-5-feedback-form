@@ -8,3 +8,12 @@
   border-style: none;
   background-color: rgba(216, 216, 216, 0.878);
 }
+
+.area-font {
+  font-family: 'Nanum Gothic', sans-serif;
+  color: black;
+}
+
+.btn-group {
+  display: inline-block;
+}

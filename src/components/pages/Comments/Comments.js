@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Comments.css';
+import Restart from '../../Restart/Restart';
 
 class Comments extends Component {
   state = {
@@ -27,18 +28,23 @@ class Comments extends Component {
         <div className="container">
           <h2>Any other comments or concerns you'd like us to know about?</h2>
           <textarea
-            className="comments"
+            className="comments area-font"
             onChange={this.handleChange}
             type="text"
             placeholder="Any other comments?"
             id="comments"
           />
 
-          <div>
+          <div className="btn-group">
             <br />
-            <button className="btn" onClick={this.handleNext}>
-              Complete
-            </button>
+            <div>
+              <button className="btn" onClick={this.handleNext}>
+                Complete
+              </button>
+            </div>
+            <div>
+              <Restart />
+            </div>
           </div>
         </div>
       </div>

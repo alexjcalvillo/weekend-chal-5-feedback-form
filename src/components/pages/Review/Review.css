@@ -14,3 +14,13 @@
   margin: 5px;
   text-align: left;
 }
+
+li:nth-child(3n-1) {
+  background-color: #f2740591;
+  border-radius: 50px;
+  font-size: 1.3rem;
+}
+
+.display-comment {
+  padding: 15px;
+}

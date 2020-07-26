@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-//MATERIAL UI COMPONENTS
-import { Button, Input } from '@material-ui/core';
+import Restart from '../../Restart/Restart';
 
 class Support extends Component {
   state = {
@@ -33,7 +31,7 @@ class Support extends Component {
     return (
       <div className="App">
         <div className="container">
-          <h2>How well are you being supported?</h2>
+          <h2>How well do you feel you are you being supported?</h2>
           <select
             className="select"
             value={this.state.feeling}
@@ -55,6 +53,7 @@ class Support extends Component {
             <button className="btn" onClick={this.handleNext('next')}>
               Next
             </button>
+            <Restart />
           </div>
         </div>
       </div>

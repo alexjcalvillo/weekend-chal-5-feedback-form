@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-//MATERIAL COMPONENTS
-import { Button, Input } from '@material-ui/core';
-
 //CUSTOM STYLES
 import '../Understanding/Understanding.css';
+import Restart from '../../Restart/Restart';
 
 class Understanding extends Component {
   state = {
@@ -58,6 +56,7 @@ class Understanding extends Component {
           <button className="btn" onClick={this.handleNext('next')}>
             Next
           </button>
+          <Restart />
         </div>
       </div>
     );

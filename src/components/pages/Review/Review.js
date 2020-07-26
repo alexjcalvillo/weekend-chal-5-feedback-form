@@ -57,7 +57,7 @@ class Review extends Component {
               <li style={{ float: 'right' }}>{this.props.support}</li>
               <br />
               <li>Comments:</li>
-              <li>{this.props.comments}</li>
+              <li className="display-comment">{this.props.comments}</li>
             </ul>
           </div>
           <br />
