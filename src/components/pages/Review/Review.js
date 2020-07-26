@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
-//MATERIAL UI COMPONENTS
-import { Button, Input } from '@material-ui/core';
-
 //CUSTOM STYLING
 import './Review.css';
 
@@ -46,22 +43,21 @@ class Review extends Component {
   render() {
     return (
       <div>
-        <h1>Review Page</h1>
-        <div className="display">
-          <ul>
-            <li>Feeling: {this.props.feeling}</li>
-            <li>Understanding: {this.props.understanding}</li>
-            <li>Support: {this.props.support}</li>
-            <li>Comments: {this.props.comments}</li>
-          </ul>
+        <div className="container">
+          <h1>Review Page</h1>
+          <div className="display">
+            <ul>
+              <li>Feeling: {this.props.feeling}</li>
+              <li>Understanding: {this.props.understanding}</li>
+              <li>Support: {this.props.support}</li>
+              <li>Comments: {this.props.comments}</li>
+            </ul>
+          </div>
+          <br />
+          <button className="btn" onClick={this.submitFeedback}>
+            Submit Feedback
+          </button>
         </div>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={this.submitFeedback}
-        >
-          Submit Feedback
-        </Button>
       </div>
     );
   }
