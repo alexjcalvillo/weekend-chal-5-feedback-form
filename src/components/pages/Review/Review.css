@@ -16,11 +16,13 @@
 }
 
 li:nth-child(3n-1) {
-  background-color: #f2740591;
-  border-radius: 50px;
+  background: linear-gradient(to top, #f2740591, #f2740500);
+  border-radius: 2px;
   font-size: 1.3rem;
+  padding: 0 5px;
 }
 
 .display-comment {
   padding: 15px;
+  font-size: 16px;
 }

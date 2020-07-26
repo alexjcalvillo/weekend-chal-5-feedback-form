@@ -60,12 +60,22 @@ const commentsReducer = (state = '', action) => {
   }
 };
 
+const adminReducer = (state = [], action) => {
+  switch (action.type) {
+    case 'SET_ADMIN_DATA':
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
 const storeInstance = createStore(
   combineReducers({
     feelingReducer,
     understandingReducer,
     supportReducer,
     commentsReducer,
+    adminReducer,
   }),
   applyMiddleware(logger)
 );

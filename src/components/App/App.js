@@ -10,6 +10,7 @@ import Comments from '../pages/Comments/Comments';
 import Review from '../pages/Review/Review';
 import Success from '../pages/Success/Success';
 import Header from '../Header/Header';
+import Admin from '../Admin/Admin';
 
 class App extends Component {
   render() {
@@ -26,6 +27,7 @@ class App extends Component {
           <Route exact path="/comments" component={Comments} />
           <Route exact path="/review" component={Review} />
           <Route exact path="/success" component={Success} />
+          <Route exact path="/admin" component={Admin} />
         </Router>
       </div>
     );

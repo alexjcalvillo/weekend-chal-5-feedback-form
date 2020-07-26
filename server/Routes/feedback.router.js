@@ -5,6 +5,23 @@ const router = express.Router();
 //CONNECT TO THE DB
 const pool = require('../modules/pool');
 
+// Get all db and send to client
+router.get('/', (req, res) => {
+  const query = `SELECT * FROM "feedback" ORDER BY "id" ASC;`;
+
+  pool
+    .query(query)
+    .then((dbResponse) => {
+      console.log(dbResponse.rows);
+      res.send(dbResponse.rows);
+    })
+    .catch((err) => {
+      console.log(`Oh that's not gonna work. ${err}`);
+      res.sendStatus(500);
+    });
+});
+
+// Create new Feedback item
 router.post('/', (req, res) => {
   console.log('this is the post route', req.body);
   const feedback = req.body;
