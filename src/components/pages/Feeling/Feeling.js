@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import './Feeling.css';
+// import './Feeling.css';
 
 class Feeling extends Component {
   state = {
@@ -29,16 +29,12 @@ class Feeling extends Component {
     return (
       <div className="container">
         <h2>How are you feeling today?</h2>
-        {/* <label htmlFor="feeling" />
-        <Input
-          onChange={this.handleChange}
-          type="number"
-          placeholder="how are you feeling"
-          id="feeling"
-          value={this.state.feeling}
-        /> */}
         <div>
-          <select value={this.state.feeling} onChange={this.handleChange}>
+          <select
+            className="select"
+            value={this.state.feeling}
+            onChange={this.handleChange}
+          >
             <option value={0}>0 - I have no feeling</option>
             <option value={1}>1</option>
             <option value={2}>2</option>
@@ -47,6 +43,7 @@ class Feeling extends Component {
             <option value={5}>5 - I feel everything!</option>
           </select>
         </div>
+        <br />
         <div>
           <button className="btn" onClick={this.handleNext}>
             Next

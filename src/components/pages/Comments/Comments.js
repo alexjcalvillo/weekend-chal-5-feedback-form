@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-//MATERIAL COMPONENTS
-import { Button } from '@material-ui/core';
+import './Comments.css';
 
 class Comments extends Component {
   state = {
@@ -26,18 +24,22 @@ class Comments extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Comments Page</h1>
-        <h2>Any other comments or concerns you'd like us to know about?</h2>
-        <textarea
-          onChange={this.handleChange}
-          type="text"
-          placeholder="Any other comments?"
-          id="comments"
-        />
-        <div>
-          <Button variant="contained" color="primary" onClick={this.handleNext}>
-            Complete
-          </Button>
+        <div className="container">
+          <h2>Any other comments or concerns you'd like us to know about?</h2>
+          <textarea
+            className="comments"
+            onChange={this.handleChange}
+            type="text"
+            placeholder="Any other comments?"
+            id="comments"
+          />
+
+          <div>
+            <br />
+            <button className="btn" onClick={this.handleNext}>
+              Complete
+            </button>
+          </div>
         </div>
       </div>
     );

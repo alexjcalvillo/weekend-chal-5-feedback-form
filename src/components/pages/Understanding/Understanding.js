@@ -36,30 +36,27 @@ class Understanding extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Understanding Page</h1>
-        <h2>How well are you understanding today's content?</h2>
-        <Input
-          onChange={this.handleChange}
-          type="number"
-          placeholder="how's your understanding?"
-          id="understanding"
-          value={this.state.understanding}
-        />
-        <div className="btn">
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={this.handleNext('back')}
+        <div className="container">
+          <h2>How well are you understanding today's content?</h2>
+          <select
+            className="select"
+            value={this.state.understanding}
+            onChange={this.handleChange}
           >
+            <option value={0}>0 - I understand nothing</option>
+            <option value={1}>1</option>
+            <option value={2}>2</option>
+            <option value={3}>3</option>
+            <option value={4}>4</option>
+            <option value={5}>5 - I understand everything!</option>
+          </select>
+          <br />
+          <button className="btn" onClick={this.handleNext('back')}>
             Back
-          </Button>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={this.handleNext('next')}
-          >
+          </button>
+          <button className="btn" onClick={this.handleNext('next')}>
             Next
-          </Button>
+          </button>
         </div>
       </div>
     );

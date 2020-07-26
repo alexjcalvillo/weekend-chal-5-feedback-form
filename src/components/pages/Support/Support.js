@@ -32,31 +32,29 @@ class Support extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Support Page</h1>
-        <h2>How well are you being supported?</h2>
-        <label htmlFor="support" />
-        <Input
-          onChange={this.handleChange}
-          type="number"
-          placeholder="do you feel supported?"
-          id="support"
-          value={this.state.support}
-        />
-        <div>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={this.handleNext('back')}
+        <div className="container">
+          <h2>How well are you being supported?</h2>
+          <select
+            className="select"
+            value={this.state.feeling}
+            onChange={this.handleChange}
           >
-            Back
-          </Button>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={this.handleNext('next')}
-          >
-            Next
-          </Button>
+            <option value={0}>0 - I have no support</option>
+            <option value={1}>1</option>
+            <option value={2}>2</option>
+            <option value={3}>3</option>
+            <option value={4}>4</option>
+            <option value={5}>5 - I feel very well supported!</option>
+          </select>
+          <div>
+            <br />
+            <button className="btn" onClick={this.handleNext('back')}>
+              Back
+            </button>
+            <button className="btn" onClick={this.handleNext('next')}>
+              Next
+            </button>
+          </div>
         </div>
       </div>
     );

@@ -12,10 +12,13 @@ class Landing extends Component {
   render() {
     return (
       <div>
-        <h1>Welcome to the Best Feedback Form on the Internet!</h1>
-        <Button variant="contained" color="primary" onClick={this.getStarted}>
-          Get Started
-        </Button>
+        <div className="container">
+          <h1>Welcome to the Best Feedback Form on the Internet!</h1>
+          <br />
+          <button className="btn" onClick={this.getStarted}>
+            Get Started
+          </button>
+        </div>
       </div>
     );
   }

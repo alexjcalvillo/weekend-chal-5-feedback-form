@@ -9,19 +9,11 @@ class Header extends Component {
     onPage: this.props.store.pageReducer,
   };
   handleClick = (page) => (event) => {
-    this.setState({
-      onPage: page,
-    });
     this.props.dispatch({
       type: page,
     });
   };
   render() {
-    const { onPage } = this.state;
-    let active = '';
-    if (onPage === 'feeling') {
-      active = 'active';
-    }
     return (
       <div>
         <header className="App-header">
@@ -33,11 +25,8 @@ class Header extends Component {
 
         <nav className="nav">
           <ul className="nav-links">
-            <li>{this.state.onPage}</li>
             <li onClick={this.handleClick('feeling')}>
-              <Link className={active} to="/feeling">
-                Feeling
-              </Link>
+              <Link to="/feeling">Feeling</Link>
             </li>
 
             <li>

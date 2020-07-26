@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #033076;
+  background-color: #011640;
   min-height: 70px;
   padding: 20px;
   color: white;
@@ -17,3 +17,41 @@
   font-size: large;
 }
 
+.container {
+  margin: auto;
+  width: 33%;
+  padding: 20px;
+  background-color: whitesmoke;
+  border-radius: 3px;
+  box-shadow: 1px 1px 4px;
+}
+
+.btn {
+  background-color: #04d9d9;
+  padding: 8px 40px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  border-style: none;
+}
+
+.btn:hover {
+  background-color: #046388;
+  cursor: pointer;
+}
+
+.select {
+  display: block;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: #444;
+  line-height: 1.3;
+  padding: 0.6em 1.4em 0.5em 0.8em;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  border: 1px solid #aaa;
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+  border-radius: 0.5em;
+}
