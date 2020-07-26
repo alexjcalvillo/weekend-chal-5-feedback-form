@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-// MATERIAL COMPONENTS
-import { Button } from '@material-ui/core';
-
 class Landing extends Component {
   getStarted = () => {
     console.log('time to get started');

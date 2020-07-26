@@ -8,7 +8,7 @@ import Understanding from '../pages/Understanding/Understanding';
 import Support from '../pages/Support/Support';
 import Comments from '../pages/Comments/Comments';
 import Review from '../pages/Review/Review';
-import Success from '../Success/Success';
+import Success from '../pages/Success/Success';
 import Header from '../Header/Header';
 
 class App extends Component {

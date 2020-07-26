@@ -17,38 +17,55 @@ state = {
 */
 
 const feelingReducer = (state = '', action) => {
-  if (action.type === 'SET_FEELING') {
-    return action.payload;
+  switch (action.type) {
+    case 'SET_FEELING':
+      return action.payload;
+      break;
+    case 'CLEAR_REDUCER':
+      return (state = '');
+      break;
+    default:
+      return state;
   }
-  return state;
 };
 
 const understandingReducer = (state = '', action) => {
-  if (action.type === 'SET_UNDERSTANDING') {
-    return action.payload;
+  switch (action.type) {
+    case 'SET_UNDERSTANDING':
+      return action.payload;
+      break;
+    case 'CLEAR_REDUCER':
+      return (state = '');
+      break;
+    default:
+      return state;
   }
-  return state;
 };
 
 const supportReducer = (state = '', action) => {
-  if (action.type === 'SET_SUPPORT') {
-    return action.payload;
+  switch (action.type) {
+    case 'SET_SUPPORT':
+      return action.payload;
+      break;
+    case 'CLEAR_REDUCER':
+      return (state = '');
+      break;
+    default:
+      return state;
   }
-  return state;
 };
 
 const commentsReducer = (state = '', action) => {
-  if (action.type === 'SET_COMMENTS') {
-    return action.payload;
+  switch (action.type) {
+    case 'SET_COMMENTS':
+      return action.payload;
+      break;
+    case 'CLEAR_REDUCER':
+      return (state = '');
+      break;
+    default:
+      return state;
   }
-  return state;
-};
-
-const pageReducer = (state = 'home', action) => {
-  if (action.type === 'feeling') {
-    return 'feeling';
-  }
-  return state;
 };
 
 const storeInstance = createStore(
@@ -57,7 +74,6 @@ const storeInstance = createStore(
     understandingReducer,
     supportReducer,
     commentsReducer,
-    pageReducer,
   }),
   applyMiddleware(logger)
 );
