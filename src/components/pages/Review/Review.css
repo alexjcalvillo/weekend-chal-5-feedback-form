@@ -3,6 +3,14 @@
   padding: 10px;
   text-align: center;
   margin: auto;
-  width: 50%;
-  border: 1px solid black;
+  width: 75%;
+  height: 80%;
+  border-radius: 6px;
+  background-color: #02405964;
+  font-size: 1.5rem;
+}
+
+.display-list {
+  margin: 5px;
+  text-align: left;
 }

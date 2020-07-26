@@ -15,7 +15,7 @@ class Feeling extends Component {
   };
   handleNext = (event) => {
     if (this.state.feeling === '') {
-      alert('Please enter a value.');
+      alert('Please select an option from the dropdown.');
       return;
     }
     this.props.dispatch({
@@ -35,6 +35,7 @@ class Feeling extends Component {
             value={this.state.feeling}
             onChange={this.handleChange}
           >
+            <option value={''}>Please select an option</option>
             <option value={0}>0 - I have no feeling</option>
             <option value={1}>1</option>
             <option value={2}>2</option>

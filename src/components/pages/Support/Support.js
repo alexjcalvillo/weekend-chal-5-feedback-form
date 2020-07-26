@@ -19,7 +19,7 @@ class Support extends Component {
       this.props.history.push('/understanding');
     } else if (way === 'next') {
       if (this.state.support === '') {
-        alert('Please enter a value.');
+        alert('Please select an option from the dropdown.');
         return;
       }
       this.props.dispatch({
@@ -39,6 +39,7 @@ class Support extends Component {
             value={this.state.feeling}
             onChange={this.handleChange}
           >
+            <option value={''}>Please select an option</option>
             <option value={0}>0 - I have no support</option>
             <option value={1}>1</option>
             <option value={2}>2</option>

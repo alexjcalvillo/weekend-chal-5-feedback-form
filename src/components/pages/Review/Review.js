@@ -46,11 +46,18 @@ class Review extends Component {
         <div className="container">
           <h1>Review Page</h1>
           <div className="display">
-            <ul>
-              <li>Feeling: {this.props.feeling}</li>
-              <li>Understanding: {this.props.understanding}</li>
-              <li>Support: {this.props.support}</li>
-              <li>Comments: {this.props.comments}</li>
+            <ul className="display-list">
+              <li style={{ float: 'left' }}>Feeling:</li>
+              <li style={{ float: 'right' }}>{this.props.feeling}</li>
+              <br />
+              <li style={{ float: 'left' }}>Understanding:</li>{' '}
+              <li style={{ float: 'right' }}>{this.props.understanding}</li>
+              <br />
+              <li style={{ float: 'left' }}>Support:</li>
+              <li style={{ float: 'right' }}>{this.props.support}</li>
+              <br />
+              <li>Comments:</li>
+              <li>{this.props.comments}</li>
             </ul>
           </div>
           <br />
