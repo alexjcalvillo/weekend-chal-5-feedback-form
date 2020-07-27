@@ -44,19 +44,18 @@ class Admin extends Component {
     const itemToDelete = id;
     swal({
       title: 'Are you sure?',
-      text:
-        'Once deleted, you will not be able to recover this imaginary file!',
+      text: 'Once deleted, you will not be able to recover this feedback!',
       icon: 'warning',
       buttons: true,
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
         this.deleteFeedback(itemToDelete);
-        swal('Poof! Your imaginary file has been deleted!', {
+        swal('The feedback has been deleted!', {
           icon: 'success',
         });
       } else {
-        swal('Your imaginary file is safe!');
+        swal('Your feedback is safe! For now!');
       }
     });
   };

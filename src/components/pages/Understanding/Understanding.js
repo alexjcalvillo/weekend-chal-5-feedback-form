@@ -7,7 +7,7 @@ import Restart from '../../Restart/Restart';
 
 class Understanding extends Component {
   state = {
-    understanding: this.props.understanding,
+    understanding: this.props.feedback.understanding,
   };
 
   handleChange = (event) => {
@@ -65,7 +65,7 @@ class Understanding extends Component {
 
 const mapStoreToProps = (store) => {
   return {
-    understanding: store.understandingReducer,
+    feedback: store.feedbackReducer,
   };
 };
 export default connect(mapStoreToProps)(Understanding);

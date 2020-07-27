@@ -4,7 +4,7 @@ import Restart from '../../Restart/Restart';
 
 class Support extends Component {
   state = {
-    support: this.props.support,
+    support: this.props.feedback.support,
   };
 
   handleChange = (event) => {
@@ -63,7 +63,7 @@ class Support extends Component {
 
 const mapStoreToProps = (store) => {
   return {
-    support: store.supportReducer,
+    feedback: store.feedbackReducer,
   };
 };
 export default connect(mapStoreToProps)(Support);

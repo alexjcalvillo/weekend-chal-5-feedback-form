@@ -16,49 +16,84 @@ state = {
 }
 */
 
-const feelingReducer = (state = '', action) => {
+const defaultFeedback = {
+  feeling: '',
+  understanding: '',
+  support: '',
+  comments: '',
+};
+const feedbackReducer = (state = defaultFeedback, action) => {
   switch (action.type) {
     case 'SET_FEELING':
-      return action.payload;
-    case 'CLEAR_REDUCER':
-      return (state = '');
-    default:
-      return state;
-  }
-};
-
-const understandingReducer = (state = '', action) => {
-  switch (action.type) {
+      return {
+        ...state,
+        feeling: action.payload,
+      };
     case 'SET_UNDERSTANDING':
-      return action.payload;
-    case 'CLEAR_REDUCER':
-      return (state = '');
-    default:
-      return state;
-  }
-};
-
-const supportReducer = (state = '', action) => {
-  switch (action.type) {
+      return {
+        ...state,
+        understanding: action.payload,
+      };
     case 'SET_SUPPORT':
-      return action.payload;
+      return {
+        ...state,
+        support: action.payload,
+      };
+    case 'SET_COMMENTS':
+      return {
+        ...state,
+        comments: action.payload,
+      };
     case 'CLEAR_REDUCER':
-      return (state = '');
+      return defaultFeedback;
     default:
-      return state;
+      return defaultFeedback;
   }
 };
 
-const commentsReducer = (state = '', action) => {
-  switch (action.type) {
-    case 'SET_COMMENTS':
-      return action.payload;
-    case 'CLEAR_REDUCER':
-      return (state = '');
-    default:
-      return state;
-  }
-};
+// const feelingReducer = (state = '', action) => {
+//   switch (action.type) {
+//     case 'SET_FEELING':
+//       return action.payload;
+//     case 'CLEAR_REDUCER':
+//       return (state = '');
+//     default:
+//       return state;
+//   }
+// };
+
+// const understandingReducer = (state = '', action) => {
+//   switch (action.type) {
+//     case 'SET_UNDERSTANDING':
+//       return action.payload;
+//     case 'CLEAR_REDUCER':
+//       return (state = '');
+//     default:
+//       return state;
+//   }
+// };
+
+// const supportReducer = (state = '', action) => {
+//   switch (action.type) {
+//     case 'SET_SUPPORT':
+//       return action.payload;
+//     case 'CLEAR_REDUCER':
+//       return (state = '');
+//     default:
+//       return state;
+//   }
+// };
+
+// const commentsReducer = (state = '', action) => {
+//   switch (action.type) {
+//     case 'SET_COMMENTS':
+//       return action.payload;
+//     case 'CLEAR_REDUCER':
+//       return (state = '');
+//     default:
+//       return state;
+//   }
+// };
 
 const adminReducer = (state = [], action) => {
   switch (action.type) {
@@ -71,10 +106,7 @@ const adminReducer = (state = [], action) => {
 
 const storeInstance = createStore(
   combineReducers({
-    feelingReducer,
-    understandingReducer,
-    supportReducer,
-    commentsReducer,
+    feedbackReducer,
     adminReducer,
   }),
   applyMiddleware(logger)

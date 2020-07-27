@@ -18,10 +18,10 @@ class Review extends Component {
     this.setState(
       {
         feedback: {
-          feeling: this.props.feeling,
-          understanding: this.props.understanding,
-          support: this.props.support,
-          comments: this.props.comments,
+          feeling: this.props.feedback.feeling,
+          understanding: this.props.feedback.understanding,
+          support: this.props.feedback.support,
+          comments: this.props.feedback.comments,
         },
       },
       () => {
@@ -48,16 +48,20 @@ class Review extends Component {
           <div className="display">
             <ul className="display-list">
               <li style={{ float: 'left' }}>Feeling:</li>
-              <li style={{ float: 'right' }}>{this.props.feeling}</li>
+              <li style={{ float: 'right' }}>{this.props.feedback.feeling}</li>
               <br />
               <li style={{ float: 'left' }}>Understanding:</li>{' '}
-              <li style={{ float: 'right' }}>{this.props.understanding}</li>
+              <li style={{ float: 'right' }}>
+                {this.props.feedback.understanding}
+              </li>
               <br />
               <li style={{ float: 'left' }}>Support:</li>
-              <li style={{ float: 'right' }}>{this.props.support}</li>
+              <li style={{ float: 'right' }}>{this.props.feedback.support}</li>
               <br />
               <li>Comment:</li>
-              <li className="display-comment">{this.props.comments}</li>
+              <li className="display-comment">
+                {this.props.feedback.comments}
+              </li>
             </ul>
           </div>
           <br />
@@ -72,10 +76,7 @@ class Review extends Component {
 
 const mapStoreToProps = (store) => {
   return {
-    feeling: store.feelingReducer,
-    understanding: store.understandingReducer,
-    support: store.supportReducer,
-    comments: store.commentsReducer,
+    feedback: store.feedbackReducer,
   };
 };
 export default connect(mapStoreToProps)(Review);

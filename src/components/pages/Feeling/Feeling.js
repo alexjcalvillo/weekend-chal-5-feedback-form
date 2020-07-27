@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Restart from '../../Restart/Restart';
 class Feeling extends Component {
   state = {
-    feeling: this.props.feeling,
+    feeling: this.props.feedback.feeling,
   };
 
   handleChange = (event) => {
@@ -55,7 +55,7 @@ class Feeling extends Component {
 }
 const mapStoreToProps = (store) => {
   return {
-    feeling: store.feelingReducer,
+    feedback: store.feedbackReducer,
   };
 };
 export default connect(mapStoreToProps)(Feeling);
