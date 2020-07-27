@@ -42,7 +42,23 @@ class Admin extends Component {
   handleClickDelete = (id) => (event) => {
     console.log('delete button pressed', id);
     const itemToDelete = id;
-    this.deleteFeedback(itemToDelete);
+    swal({
+      title: 'Are you sure?',
+      text:
+        'Once deleted, you will not be able to recover this imaginary file!',
+      icon: 'warning',
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        this.deleteFeedback(itemToDelete);
+        swal('Poof! Your imaginary file has been deleted!', {
+          icon: 'success',
+        });
+      } else {
+        swal('Your imaginary file is safe!');
+      }
+    });
   };
 
   render() {
